@@ -1,16 +1,18 @@
+import webpack from 'webpack'
 import { buildLoaders } from './buildLoaders'
 import { buildPlugins } from './buildPlugins'
 import { buildResolve } from './buildResolve'
+import { buildDevServer } from './buildDevServer';
 import { BuildOptions } from './types/config'
-import webpack from 'webpack'
 
 export function buildWebpackConfig(options: BuildOptions): webpack.Configuration {
-	const {mode, paths} = options
+	const {mode, paths, isDev} = options
 	const {build, entry} = paths
 	
 	return {
 		mode: mode,
 		entry: entry,
+		devtool:  isDev ? 'inline-source-map' : undefined,
 		output: {
 			path: build,
 			filename: '[name].[contenthash].js',
@@ -21,5 +23,6 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
 			rules: buildLoaders(),
 		},
 		resolve: buildResolve(),
+		devServer: buildDevServer(options),
 		}
 }
