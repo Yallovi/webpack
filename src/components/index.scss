@@ -1,0 +1,11 @@
+.block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.btn {
+  padding: 5px;
+  background: yellow;
+  cursor: pointer;
+}
