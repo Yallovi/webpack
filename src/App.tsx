@@ -1,14 +1,14 @@
 import {FC} from 'react'
-import {Counter} from "./components/Counter";
-import './index.scss'
+import { BrowserRouter } from 'react-router-dom'
+
+import MainRouter from './pages'
 
 const App: FC = props => {
-  const {} = props
 
-  return <div className={'app'}>
-    App
-    <Counter />
-  </div>
+  return (
+  <BrowserRouter>
+      <MainRouter />
+  </BrowserRouter>)
 
 }
 
