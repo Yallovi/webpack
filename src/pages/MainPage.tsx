@@ -5,7 +5,7 @@ interface IMainPage {}
 
 const MainPage: FC<IMainPage> = props => {
 	const {} = props
-	return <div className={'app'}>
+	return <div>
 		Hello MainPage
 		
 		<Link to={'/'}>MainPage</Link>

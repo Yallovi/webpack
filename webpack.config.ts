@@ -18,7 +18,7 @@ export default (env: Env) => {
   const port = env.port ?? 3000
 
   const config: webpack.Configuration = buildWebpackConfig({
-    mode: mode,
+    mode,
     paths,
     isDev,
     port
