@@ -3,6 +3,7 @@ import { useRoutes, Routes } from 'react-router-dom'
 
 import '../styles/index.scss'
 import useTheme from '../hooks/useTheme'
+import { classNames } from '../helpers/classNames/classNames'
 
 const Counter = lazy(() => import("../components/Counter"));
 const MainPage = lazy(() => import("./MainPage"))
@@ -23,10 +24,14 @@ const MainRouter: FC<IMainRouter> = props => {
   ]);
 
   const {theme, toggleTheme} = useTheme()
-	return <Suspense fallback={'Loading...'}><div className={`app ${theme}`}>
-    <button onClick={toggleTheme}>toggleTheme</button>
-    {routes}
-    </div></Suspense>
+	return (
+    <Suspense fallback={'Loading...'}>
+      <div className={classNames('app', {}, [theme])}>
+        <button onClick={toggleTheme}>toggleTheme</button>
+        {routes}
+      </div>
+    </Suspense>
+    )
 }
 
 export default MainRouter
