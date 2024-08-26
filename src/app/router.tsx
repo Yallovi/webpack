@@ -1,25 +1,20 @@
 import { FC, Suspense, lazy } from 'react'
 import { useRoutes, Routes } from 'react-router-dom'
+import useTheme from 'app/providers/ThemeProvider/lib/useTheme'
+import { classNames } from 'shared/lib/classNames'
 
-import '../styles/index.scss'
-import useTheme from '../hooks/useTheme'
-import { classNames } from '../helpers/classNames/classNames'
+import 'app/styles/index.scss'
 
-const Counter = lazy(() => import("../components/Counter"));
-const MainPage = lazy(() => import("./MainPage"))
+const MainPage = lazy(() => import("../pages/main/ui/MainPage"))
 
-interface IMainRouter {}
+interface IRouter {}
 
-const MainRouter: FC<IMainRouter> = props => {
+const Router: FC<IRouter> = props => {
 	
 	const routes = useRoutes([
     {
       path: "/",
       element: <MainPage />
-    },
-    {
-      path: "counter",
-      element: <Counter />,
     },
   ]);
 
@@ -34,4 +29,4 @@ const MainRouter: FC<IMainRouter> = props => {
     )
 }
 
-export default MainRouter
+export default Router

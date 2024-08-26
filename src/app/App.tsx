@@ -1,8 +1,8 @@
 import {FC} from 'react'
 import { BrowserRouter } from 'react-router-dom'
+import { ThemeProvider } from 'app/providers/ThemeProvider'
+import Router from './router'
 
-import MainRouter from './pages'
-import ThemeProvider from './Providers/ThemeProvider'
 
 
 const App: FC = props => {
@@ -10,7 +10,7 @@ const App: FC = props => {
   return (
   <BrowserRouter>
     <ThemeProvider>
-      <MainRouter />
+      <Router />
       </ThemeProvider>
   </BrowserRouter>)
 

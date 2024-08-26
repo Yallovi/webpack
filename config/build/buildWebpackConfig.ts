@@ -1,7 +1,7 @@
 import webpack from 'webpack'
 import { buildLoaders } from './buildLoaders'
 import { buildPlugins } from './buildPlugins'
-import { buildResolve } from './buildResolve'
+import { buildResolve } from './buildResolvers'
 import { buildDevServer } from './buildDevServer';
 import { BuildOptions } from './types/config'
 
@@ -20,7 +20,7 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
 		},
 		plugins: buildPlugins(options),
 		module: { rules: buildLoaders(options) },
-		resolve: buildResolve(),
+		resolve: buildResolve(options),
 		devServer: buildDevServer(options),
 		}
 }
