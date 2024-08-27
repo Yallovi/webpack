@@ -4,19 +4,19 @@ import useTheme from 'app/providers/ThemeProvider/lib/useTheme'
 import { classNames } from 'shared/lib/classNames'
 
 import 'app/styles/index.scss'
+import { routeConfig } from 'shared/config/routeConfig/routeConfig'
 
-const MainPage = lazy(() => import("../pages/main/ui/MainPage"))
+// const MainPage = lazy(() => import("../pages/main/ui/MainPage"))
 
-interface IRouter {}
 
-const Router: FC<IRouter> = props => {
-	
-	const routes = useRoutes([
-    {
-      path: "/",
-      element: <MainPage />
-    },
-  ]);
+const AppRouter: FC = () => {
+
+	const routes = useRoutes(Object.values(routeConfig).map(({element, path}) => {
+    return  {
+      path: path,
+      element: element
+    }
+}));
 
   const {theme, toggleTheme} = useTheme()
 	return (
@@ -29,4 +29,4 @@ const Router: FC<IRouter> = props => {
     )
 }
 
-export default Router
+export default AppRouter
