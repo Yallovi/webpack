@@ -19,12 +19,10 @@ const AppRouter: FC = () => {
 }));
 
   const {theme, toggleTheme} = useTheme()
+  
 	return (
     <Suspense fallback={'Loading...'}>
-      <div className={classNames('app', {}, [theme])}>
-        <button onClick={toggleTheme}>toggleTheme</button>
         {routes}
-      </div>
     </Suspense>
     )
 }

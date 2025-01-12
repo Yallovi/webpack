@@ -29,10 +29,17 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
 				},
 				"sass-loader",
 			],
+			
 		}
+
+	const lessLoader =   {
+    test: /\.(sass|less|css)$/,
+    use: ['style-loader', 'css-loader', 'less-loader']
+  }
 
 	return [
 		tsLoader,
-		cssLoader
+		cssLoader,
+		lessLoader
 	]
 }

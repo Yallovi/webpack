@@ -6,11 +6,7 @@ interface IMainPage {}
 const MainPage: FC<IMainPage> = props => {
 	const {} = props
 	return <div>
-		Hello MainPage
-		
-		<Link to={'/'}>MainPage</Link>
-		<Link to={'counter'}>Counter</Link>
-
+		MainPage
 		</div>
 }
 
