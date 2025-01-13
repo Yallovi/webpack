@@ -1,12 +1,10 @@
-import { FC, Suspense, lazy } from 'react'
-import { useRoutes, Routes } from 'react-router-dom'
+import { FC, Suspense } from 'react'
+import { useRoutes } from 'react-router-dom'
 import useTheme from 'app/providers/ThemeProvider/lib/useTheme'
-import { classNames } from 'shared/lib/classNames'
-
-import 'app/styles/index.scss'
 import { routeConfig } from 'shared/config/routeConfig/routeConfig'
 
-// const MainPage = lazy(() => import("../pages/main/ui/MainPage"))
+import 'app/styles/index.scss'
+
 
 
 const AppRouter: FC = () => {
@@ -22,7 +20,7 @@ const AppRouter: FC = () => {
   
 	return (
     <Suspense fallback={'Loading...'}>
-        {routes}
+        <div className='page-wrapper'>{routes}</div>
     </Suspense>
     )
 }
