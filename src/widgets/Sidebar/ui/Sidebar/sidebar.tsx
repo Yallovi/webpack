@@ -2,6 +2,7 @@ import { FC, useState } from 'react'
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher'
 import { Button } from 'shared/ui/Button/Button'
 import { classNames } from 'shared/lib/classNames'
+import { LanguagesSwitcher } from 'widgets/LanguagesSwitcher'
 
 import s from './sidebar.module.scss'
 
@@ -16,6 +17,7 @@ export const Sidebar: FC = () => {
 			<Button onClick={handleToggle}>Toggle</Button>
 			<div className={s.switchers}>
 				<ThemeSwitcher />
+				<LanguagesSwitcher />
 			</div>
 		</div>
 	)
