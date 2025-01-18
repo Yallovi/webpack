@@ -10,13 +10,13 @@ import './shared/config/i18n/i18n'
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <StrictMode>
-    <BrowserRouter>
-    <ThemeProvider>
-    <Suspense fallback="">
-    <App/>
-    </Suspense>
-    </ThemeProvider>
-    </BrowserRouter>
-  </StrictMode>
+    <StrictMode>
+        <BrowserRouter>
+            <ThemeProvider>
+                <Suspense fallback="">
+                    <App/>
+                </Suspense>
+            </ThemeProvider>
+        </BrowserRouter>
+    </StrictMode>
 );

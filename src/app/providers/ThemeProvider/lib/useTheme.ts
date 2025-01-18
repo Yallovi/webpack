@@ -7,11 +7,11 @@ type UseThemeResult = {
 }
 
 export default function useTheme(): UseThemeResult {
-	const {theme, setTheme} = useContext(ThemeContext)
+    const {theme, setTheme} = useContext(ThemeContext)
 
-	return {
-		theme,
-		toggleTheme: setTheme
-	}
+    return {
+        theme,
+        toggleTheme: setTheme
+    }
 
 }

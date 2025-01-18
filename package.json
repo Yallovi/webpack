@@ -7,12 +7,15 @@
     "dev": "webpack serve --env port=4000",
     "build:dev": "webpack --env mode=development",
     "build:prod": "webpack --env mode=production",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint:ts": " eslint \"**/*.{ts,tsx}\"",
+    "lint:ts:fix": " eslint \"**/*.{ts,tsx}\" --fix"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@eslint/js": "^9.18.0",
     "@svgr/webpack": "^8.1.0",
     "@types/node": "^20.11.24",
     "@types/react": "^18.2.63",
@@ -22,7 +25,10 @@
     "@types/webpack-dev-server": "^4.7.2",
     "css-loader": "^6.10.0",
     "css-raw-loader": "^0.1.2",
+    "eslint": "^9.18.0",
+    "eslint-plugin-react": "^7.37.4",
     "file-loader": "^6.2.0",
+    "globals": "^15.14.0",
     "html-webpack-plugin": "^5.6.0",
     "less-loader": "^12.2.0",
     "mini-css-extract-plugin": "^2.8.1",
@@ -32,6 +38,7 @@
     "ts-loader": "^9.5.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3",
+    "typescript-eslint": "^8.20.0",
     "webpack": "^5.90.3",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.0.2"

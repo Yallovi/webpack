@@ -8,17 +8,17 @@ import s from './sidebar.module.scss'
 
 
 export const Sidebar: FC = () => {
-	const [collapsed,setCollapsed] = useState(false)
+    const [collapsed,setCollapsed] = useState(false)
 
-	const handleToggle = () => setCollapsed(prev => !prev)
+    const handleToggle = () => setCollapsed(prev => !prev)
 
-	return (
-		<div className={classNames(s.sidebar, {[s.collapsed]:collapsed})}>
-			<Button onClick={handleToggle}>Toggle</Button>
-			<div className={s.switchers}>
-				<ThemeSwitcher />
-				<LanguagesSwitcher />
-			</div>
-		</div>
-	)
+    return (
+        <div className={classNames(s.sidebar, {[s.collapsed]:collapsed})}>
+            <Button onClick={handleToggle}>Toggle</Button>
+            <div className={s.switchers}>
+                <ThemeSwitcher />
+                <LanguagesSwitcher />
+            </div>
+        </div>
+    )
 }
