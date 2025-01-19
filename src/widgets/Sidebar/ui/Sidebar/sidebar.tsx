@@ -3,9 +3,9 @@ import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher'
 import { Button } from 'shared/ui/Button/Button'
 import { classNames } from 'shared/lib/classNames'
 import { LanguagesSwitcher } from 'widgets/LanguagesSwitcher'
+import { useTranslation } from 'react-i18next'
 
 import s from './sidebar.module.scss'
-import { useTranslation } from 'react-i18next'
 
 
 export const Sidebar: FC = () => {

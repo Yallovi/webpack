@@ -3,6 +3,7 @@ export default {
     extends: ["stylelint-config-standard"],
 
     rules: {
-        'selector-class-pattern': null
+        'selector-class-pattern': null,
+        "import-notation": null
     }
 };
