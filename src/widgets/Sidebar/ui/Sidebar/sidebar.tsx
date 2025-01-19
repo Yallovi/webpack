@@ -5,16 +5,18 @@ import { classNames } from 'shared/lib/classNames'
 import { LanguagesSwitcher } from 'widgets/LanguagesSwitcher'
 
 import s from './sidebar.module.scss'
+import { useTranslation } from 'react-i18next'
 
 
 export const Sidebar: FC = () => {
+    const { t } = useTranslation('sidebar')
     const [collapsed,setCollapsed] = useState(false)
 
     const handleToggle = () => setCollapsed(prev => !prev)
 
     return (
         <div className={classNames(s.sidebar, {[s.collapsed]:collapsed})}>
-            <Button onClick={handleToggle}>Toggle</Button>
+            <Button onClick={handleToggle}>{t("toggle")}</Button>
             <div className={s.switchers}>
                 <ThemeSwitcher />
                 <LanguagesSwitcher />
