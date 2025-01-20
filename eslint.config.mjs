@@ -43,7 +43,7 @@ export default [
                     "varsIgnorePattern": "^AppLinkTheme$"
                 }
             ],
-            "max-len": ["error", {"ignoreComments": true}]
+            "max-len": ["error", {"ignoreComments": true, code: 100}]
         },
 
     }
