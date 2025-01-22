@@ -12,11 +12,11 @@ export const Sidebar: FC = () => {
     const { t } = useTranslation('sidebar')
     const [collapsed,setCollapsed] = useState(false)
 
-    const handleToggle = () => setCollapsed(prev => !prev)
+    const handleToggle = async () => setCollapsed(prev => !prev)
 
     return (
-        <div className={classNames(s.sidebar, {[s.collapsed]:collapsed})}>
-            <Button onClick={handleToggle}>{t("toggle")}</Button>
+        <div data-testid="sidebar" className={classNames(s.sidebar, {[s.collapsed]:collapsed})}>
+            <Button data-testid="sidebar-toggle" onClick={handleToggle}>{t("toggle")}</Button>
             <div className={s.switchers}>
                 <ThemeSwitcher />
                 <LanguagesSwitcher />
