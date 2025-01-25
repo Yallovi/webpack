@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import s from './notFound.module.scss'
+import s from './NotFoundPage.module.scss'
 
 export const NotFoundPage: FC = () => {
     const {t} = useTranslation("common")
