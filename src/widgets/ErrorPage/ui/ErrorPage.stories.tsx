@@ -8,9 +8,6 @@ import { ErrorPage } from './ErrorPage'
 const meta = {
   title: 'widget/ErrorPage',
   component: ErrorPage,
-  parameters: {
-    layout: 'centered',
-  },
   tags: ['autodocs'],
 } satisfies Meta<typeof ErrorPage>;
 

@@ -10,9 +10,6 @@ import { ThemeDecorator } from 'shared/config/storybook/decorators/ThemeDecorato
 const meta = {
   title: 'shared/Button',
   component: Button,
-  parameters: {
-    layout: 'centered',
-  },
   tags: ['autodocs'],
   argTypes: {
     // backgroundColor: { control: 'color' },
