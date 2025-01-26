@@ -3,7 +3,7 @@ import { buildLoaders } from './buildLoaders'
 import { buildPlugins } from './buildPlugins'
 import { buildDevServer } from './buildDevServer';
 import { BuildOptions } from './types/config'
-import { buildResolve } from './buildResolvers'
+import { buildResolvers } from './buildResolvers'
 
 export function buildWebpackConfig(options: BuildOptions): webpack.Configuration {
     const {mode, paths, isDev} = options
@@ -20,7 +20,7 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
         },
         plugins: buildPlugins(options),
         module: { rules: buildLoaders(options) },
-        resolve: buildResolve(options),
-        devServer: buildDevServer(options),
+        resolve: buildResolvers(options),
+        devServer: isDev ? buildDevServer(options) : undefined,
     }
 }

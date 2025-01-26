@@ -9,7 +9,8 @@ import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 export function buildPlugins(options: BuildOptions): webpack.WebpackPluginInstance[] {
     const { paths, isDev } =options
     const { html } = paths
-    return [
+
+    const plugins = [
         new HtmlWebpackPlugin({template: html}),
         new MiniCssExtractPlugin({
             filename: 'css/[name].[contenthash:8].css',
@@ -18,7 +19,14 @@ export function buildPlugins(options: BuildOptions): webpack.WebpackPluginInstan
         new webpack.DefinePlugin({
             __IS_DEV__: JSON.stringify(isDev)
         }),
-        new webpack.HotModuleReplacementPlugin(),
-        new BundleAnalyzerPlugin({openAnalyzer: false})
     ]
+
+    if (isDev) {
+        //@ts-ignore
+        plugins.push(new webpack.HotModuleReplacementPlugin())
+        //@ts-ignore
+        plugins.push(new BundleAnalyzerPlugin({openAnalyzer: false}))
+    }
+
+    return plugins
 }
