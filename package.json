@@ -13,9 +13,10 @@
     "lint:scss": "stylelint \"**/*.scss\"",
     "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
     "storybook": "storybook dev -p 6006 -c config/.storybook",
-    "build-storybook": "storybook bui ld -c config/.storybook",
+    "build:storybook": "storybook build -c config/.storybook",
     "test:ui": "npx loki test",
-    "test:ui:approve": "npx loki approve"
+    "test:ui:approve": "npx loki approve",
+    "test:ui:ci": "loki --requireReference --reactUri file:./storybook-static"
   },
   "keywords": [],
   "author": "",
