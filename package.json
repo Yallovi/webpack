@@ -7,7 +7,7 @@
     "dev": "webpack serve --env port=4000",
     "build:dev": "webpack --env mode=development",
     "build:prod": "webpack --env mode=production",
-    "test": "jest --config ./config/jest/jest.config.ts",
+    "test:unit": "jest --config ./config/jest/jest.config.ts",
     "lint:ts": "eslint \"**/*.{ts,tsx}\"",
     "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix",
     "lint:scss": "stylelint \"**/*.scss\"",
