@@ -8,7 +8,11 @@ import i18next from 'eslint-plugin-i18next';
 /** @type {import('eslint').Linter.Config[]} */
 export default [
     {files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"]},
-    {languageOptions: { globals: globals.browser }},
+    {languageOptions: { globals: {
+        ...globals.browser,
+        ...globals.node,
+        __IS_DEV__: true,
+    } }},
     pluginJs.configs.recommended,
     ...tseslint.configs.recommended,
     pluginReact.configs.flat.recommended,
@@ -45,10 +49,5 @@ export default [
             ],
             "max-len": ["error", {"ignoreComments": true, code: 100}]
         },
-        globals: {
-            __IS_DEV__: true
-        },
-
-
     }
 ];

@@ -1,4 +1,3 @@
-import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 
@@ -8,13 +7,13 @@ import { ThemeDecorator } from 'shared/config/storybook/decorators/ThemeDecorato
 
 
 const meta = {
-  title: 'shared/Button',
-  component: Button,
-  tags: ['autodocs'],
-  argTypes: {
+    title: 'shared/Button',
+    component: Button,
+    tags: ['autodocs'],
+    argTypes: {
     // backgroundColor: { control: 'color' },
-  },
-  args: { onClick: fn() },
+    },
+    args: { onClick: fn() },
 } satisfies Meta<typeof Button>;
 
 export default meta;
@@ -22,29 +21,29 @@ type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
-  args: {
-    children: 'Primary button'
-  },
+    args: {
+        children: 'Primary button'
+    },
 };
 
 export const Outline: Story = {
     args: {
-      children: 'OUTLINE button',
-      theme: ThemeButton.OUTLINE,
+        children: 'OUTLINE button',
+        theme: ThemeButton.OUTLINE,
     }
 };
 
 export const Clear: Story = {
-  args: {
-    children: 'Text',
-    theme: ThemeButton.CLEAR,
-  }
+    args: {
+        children: 'Text',
+        theme: ThemeButton.CLEAR,
+    }
 };
 
 export const OutlineDark: Story = {
-  args: {
-    children: 'Text',
-    theme: ThemeButton.OUTLINE,
-  },
-  decorators: [ThemeDecorator(Theme.DARK)]
+    args: {
+        children: 'Text',
+        theme: ThemeButton.OUTLINE,
+    },
+    decorators: [ThemeDecorator(Theme.DARK)]
 };

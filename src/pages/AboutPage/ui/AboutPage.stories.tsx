@@ -4,16 +4,16 @@ import { ThemeDecorator } from 'shared/config/storybook/decorators/ThemeDecorato
 import { Meta, StoryObj } from '@storybook/react/*'
 
 const meta = {
-		title: 'pages/AboutPage',
-		component: AboutPage,
-		tags: ['autodocs'],
-	} satisfies Meta<typeof AboutPage>;
+    title: 'pages/AboutPage',
+    component: AboutPage,
+    tags: ['autodocs'],
+} satisfies Meta<typeof AboutPage>;
 	
-	export default meta;
+export default meta;
 	type Story = StoryObj<typeof meta>;
 
 export const Normal: Story = {}
 
 export const Dark: Story = {
-	decorators: [ThemeDecorator(Theme.DARK)]
+    decorators: [ThemeDecorator(Theme.DARK)]
 }

@@ -1,4 +1,3 @@
-import React from 'react';
 import { ThemeDecorator } from 'shared/config/storybook/decorators/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
 import { AppLink, AppLinkTheme } from './AppLink';
@@ -8,9 +7,9 @@ const meta = {
     title: 'shared/AppLink',
     component: AppLink,
     tags: ['autodocs'],
-  } satisfies Meta<typeof AppLink>;
+} satisfies Meta<typeof AppLink>;
   
-  export default meta;
+export default meta;
   type Story = StoryObj<typeof meta>;
 
 

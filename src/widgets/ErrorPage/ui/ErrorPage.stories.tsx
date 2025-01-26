@@ -6,9 +6,9 @@ import { ErrorPage } from './ErrorPage'
 
 
 const meta = {
-  title: 'widget/ErrorPage',
-  component: ErrorPage,
-  tags: ['autodocs'],
+    title: 'widget/ErrorPage',
+    component: ErrorPage,
+    tags: ['autodocs'],
 } satisfies Meta<typeof ErrorPage>;
 
 export default meta;
@@ -17,5 +17,5 @@ type Story = StoryObj<typeof meta>;
 export const Light: Story = {};
 
 export const Dark: Story = {
-  decorators: [ThemeDecorator(Theme.DARK)]
+    decorators: [ThemeDecorator(Theme.DARK)]
 };

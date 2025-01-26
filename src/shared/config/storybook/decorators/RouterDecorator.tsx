@@ -3,9 +3,9 @@ import { BrowserRouter } from 'react-router-dom'
 
 
 export const RouterDecorator = (Story: Story) => {
-	return (
-		<BrowserRouter>
-			<Story/>
-		</BrowserRouter>
-	)
+    return (
+        <BrowserRouter>
+            <Story/>
+        </BrowserRouter>
+    )
 }
